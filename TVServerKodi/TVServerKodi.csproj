@@ -43,7 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -53,7 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
@@ -130,42 +130,42 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Common.Utils, Version=1.1.7.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Common.Utils">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Common.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Gentle.Common, Version=1.2.9.1285, Culture=neutral, PublicKeyToken=80b5de62e27be49b">
+    <Reference Include="Gentle.Common">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Gentle.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Gentle.Framework, Version=1.2.9.1286, Culture=neutral, PublicKeyToken=80b5de62e27be49b">
+    <Reference Include="Gentle.Framework">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Gentle.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Gentle.Provider.MySQL, Version=1.2.9.1288, Culture=neutral">
+    <Reference Include="Gentle.Provider.MySQL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Gentle.Provider.MySQL.dll</HintPath>
     </Reference>
     <Reference Include="Gentle.Provider.SQLite">
       <HintPath>References\Gentle.Provider.SQLite.dll</HintPath>
     </Reference>
-    <Reference Include="Gentle.Provider.SQLServer, Version=1.2.9.1289, Culture=neutral, PublicKeyToken=80b5de62e27be49b">
+    <Reference Include="Gentle.Provider.SQLServer">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\Gentle.Provider.SQLServer.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+    <Reference Include="log4net">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=1.0.7.30072, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+    <Reference Include="MySql.Data">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="PluginBase, Version=1.0.0.29854, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="PluginBase">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\PluginBase.dll</HintPath>
     </Reference>
-    <Reference Include="SetupControls, Version=1.0.0.29853, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="SetupControls">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\SetupControls.dll</HintPath>
     </Reference>
@@ -179,23 +179,23 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TvBusinessLayer, Version=1.0.4.17440, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="TvBusinessLayer">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\TvBusinessLayer.dll</HintPath>
     </Reference>
-    <Reference Include="TvControl, Version=1.0.0.29884, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="TvControl">
       <HintPath>References\TvControl.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="TVDatabase, Version=1.0.0.29883, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="TVDatabase">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\TVDatabase.dll</HintPath>
     </Reference>
-    <Reference Include="TVLibrary, Version=1.0.0.29855, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="TVLibrary">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\TVLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="TvLibrary.Interfaces, Version=1.0.0.29883, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="TvLibrary.Interfaces">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>References\TvLibrary.Interfaces.dll</HintPath>
     </Reference>
