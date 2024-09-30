@@ -30,6 +30,7 @@ jobs:
         run: |
           nuget restore
         shell: cmd
+        working-directory: ${{ github.workspace }}\TVServerKodi
 
       - name: Build
         run: |
