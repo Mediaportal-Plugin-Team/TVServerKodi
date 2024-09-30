@@ -3,7 +3,7 @@ name: Test / TVServerKodi
 on:
   workflow_dispatch:
   pull_request:
-    types: 
+    types:
       - opened
       - synchronize
       - edited
