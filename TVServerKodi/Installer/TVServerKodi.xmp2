@@ -133,7 +133,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Id />
         <MinVersion>
           <Major>1</Major>
-          <Minor>32</Minor>
+          <Minor>36</Minor>
           <Build>100</Build>
           <Revision>0</Revision>
         </MinVersion>
@@ -144,7 +144,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
-        <Message>Requires MPEI 1.32.100.0 or higher!</Message>
+        <Message>Requires MPEI 1.36.100.0 or higher!</Message>
         <Name>MPEI</Name>
         <Condition>None</Condition>
       </DependencyItem>
@@ -153,7 +153,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Id />
         <MinVersion>
           <Major>1</Major>
-          <Minor>32</Minor>
+          <Minor>36</Minor>
           <Build>100</Build>
           <Revision>0</Revision>
         </MinVersion>
@@ -164,7 +164,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
-        <Message>Requires MediaPortal TVServer 1.32.100.0 or higher!</Message>
+        <Message>Requires MediaPortal TVServer 1.36.100.0 or higher!</Message>
         <Name>MediaPortal TVServer</Name>
         <Condition>None</Condition>
       </DependencyItem>
@@ -207,10 +207,10 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>With this plugin you can watch Live TV, recordings, EPG and schedules in XBMC (v12.0 or above) and Kodi. The TVServerKodi plugin extends the MediaPortal TVServer with a dedicated RPC gateway to allow XBMC/Kodi  to access and control the TVServer.</ExtensionDescription>
-    <VersionDescription>Any CPU (x86/x64) Version</VersionDescription>
+    <VersionDescription>Mediaportal 1.37 | Willow - Support</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>https://github.com/Mediaportal-Plugin-Team/TVServerKodi/releases/download/v[Version]/[Name]-v[Version].mpe1</OnlineLocation>
-    <ReleaseDate>2024-08-21T20:00:00</ReleaseDate>
+    <ReleaseDate>2025-04-27T20:00:00</ReleaseDate>
     <Tags>xbmc, kodi, tv server plugins</Tags>
     <PlatformCompatibility>AnyCPU</PlatformCompatibility>
     <Location>.\Release\[Name]-v[Version].mpe1</Location>

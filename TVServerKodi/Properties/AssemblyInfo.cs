@@ -10,7 +10,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TVServerKodi")]
-[assembly: AssemblyCopyright("Copyright © Team MediaPortal 2024, Marcel Groothuis 2010-2018")]
+[assembly: AssemblyCopyright("Copyright © Team MediaPortal 2024-2025, Marcel Groothuis 2010-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
