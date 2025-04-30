@@ -28,8 +28,8 @@ using System.Text.RegularExpressions;
 
 namespace TVServerKodi.Common
 {
-	public class ShareExplorer
-	{
+    public class ShareExplorer
+    {
         #region Interop
 
         #region Constants
@@ -458,15 +458,13 @@ namespace TVServerKodi.Common
 
                 if (nRet == NO_ERROR && entriesRead > 0)
                 {
-                    Type t = (level == 2) ? typeof(SHARE_INFO_2) : typeof(SHARE_INFO_1);
-                    int offset = Marshal.SizeOf(t);
-
-                    for (int i = 0, lpItem = pBuffer.ToInt32(); i < entriesRead; i++, lpItem += offset)
+                    int offset = (level == 2) ? Marshal.SizeOf(typeof(SHARE_INFO_2)) : Marshal.SizeOf(typeof(SHARE_INFO_1));
+                    var lpItem = pBuffer;
+                    for (int i = 0; i < entriesRead; i++, lpItem = IntPtr.Add(lpItem, offset))
                     {
-                        IntPtr pItem = new IntPtr(lpItem);
                         if (level == 1)
                         {
-                            SHARE_INFO_1 shareInfo = (SHARE_INFO_1)Marshal.PtrToStructure(pItem, t);
+                            SHARE_INFO_1 shareInfo = Marshal.PtrToStructure<SHARE_INFO_1>(lpItem);
                             if (shareTypes.Contains(shareInfo.ShareType))
                             {
                                 shareInfoList.Add(new ShareInfo(serverName, shareInfo.NetName, string.Empty, shareInfo.ShareType, shareInfo.Remark));
@@ -474,7 +472,7 @@ namespace TVServerKodi.Common
                         }
                         else
                         {
-                            SHARE_INFO_2 shareInfo = (SHARE_INFO_2)Marshal.PtrToStructure(pItem, t);
+                            SHARE_INFO_2 shareInfo = Marshal.PtrToStructure<SHARE_INFO_2>(lpItem);
                             if (shareTypes.Contains(shareInfo.ShareType))
                             {
                                 shareInfoList.Add(new ShareInfo(serverName, shareInfo.NetName, shareInfo.Path, shareInfo.ShareType, shareInfo.Remark));
@@ -501,8 +499,7 @@ namespace TVServerKodi.Common
             ushort entriesRead, totalEntries;
             List<ShareInfo> shareInfoList = new List<ShareInfo>();
 
-            Type t = typeof(SHARE_INFO_50);
-            int size = Marshal.SizeOf(t);
+            int size = Marshal.SizeOf(typeof(SHARE_INFO_50));
             ushort cbBuffer = (ushort)(MAX_SI50_ENTRIES * size);
             //On Win9x, must allocate buffer before calling API
             IntPtr pBuffer = Marshal.AllocHGlobal(cbBuffer);
@@ -514,20 +511,20 @@ namespace TVServerKodi.Common
                 if (nRet == ERROR_WRONG_LEVEL)
                 {
                     level = 1;
-                    t = typeof(SHARE_INFO_1_9x);
-                    size = Marshal.SizeOf(t);
+                    size = Marshal.SizeOf(typeof(SHARE_INFO_1_9x));
                     nRet = NetShareEnum(serverName, level, pBuffer, cbBuffer, out entriesRead, out totalEntries);
                 }
 
                 if (nRet == NO_ERROR || nRet == ERROR_MORE_DATA)
                 {
-                    for (int i = 0, lpItem = pBuffer.ToInt32(); i < entriesRead; i++, lpItem += size)
+                    long lpItem = pBuffer.ToInt64();
+                    for (int i = 0; i < entriesRead; i++, lpItem += size)
                     {
                         IntPtr pItem = new IntPtr(lpItem);
 
                         if (level == 1)
                         {
-                            SHARE_INFO_1_9x shareInfo = (SHARE_INFO_1_9x)Marshal.PtrToStructure(pItem, t);
+                            SHARE_INFO_1_9x shareInfo = Marshal.PtrToStructure<SHARE_INFO_1_9x>(pItem);
                             if (shareTypes.Contains(shareInfo.ShareType))
                             {
                                 shareInfoList.Add(new ShareInfo(serverName, shareInfo.NetName, string.Empty, shareInfo.ShareType, shareInfo.Remark));
@@ -535,7 +532,7 @@ namespace TVServerKodi.Common
                         }
                         else
                         {
-                            SHARE_INFO_50 shareInfo = (SHARE_INFO_50)Marshal.PtrToStructure(pItem, t);
+                            SHARE_INFO_50 shareInfo = Marshal.PtrToStructure<SHARE_INFO_50>(pItem);
                             if (shareTypes.Contains(shareInfo.ShareType))
                             {
                                 shareInfoList.Add(new ShareInfo(serverName, shareInfo.NetName, shareInfo.Path, shareInfo.ShareType, shareInfo.Remark));
